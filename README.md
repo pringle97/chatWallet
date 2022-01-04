@@ -1,1 +1,1 @@
-# chatWallet
+# Chat-Wallet
