@@ -67,18 +67,26 @@ passport.use(new JWTStrategy({
   }))
 
 app.use(require('./routes'))
+// socket user data maps socket id with usernames in memory instead of using database
+const socketUserData = {}
+// username to an array of rooms
+const userRoomsData = {}
 
 const botName = 'Chat Bot'
 //run on login or connect
 io.on('connection', socket => {
   socket.on('joinRoom', ({ username, room }) => {
     const currentUser = { username, room }
-
+    socketUserData[socket.id] = currentUser.username
+    if (userRoomsData[username] == null) {
+      userRoomsData[username] = {}
+    }
+    userRoomsData[username][room] = true
     socket.join(currentUser.room)
- 
+
 
     //welcome current user
-    console.log(`${currentUser.username} new connection ${socket.id}`)
+    console.log(`${currentUser.username} new connection ${socket.id}, ${Object.keys(userRoomsData[username])}`)
     socket.emit('message', formatMessage(botName, 'Welcome to Chat Wallet!'))
 
     // broadcast when user Joins chat
@@ -87,11 +95,13 @@ io.on('connection', socket => {
 
   })
   socket.on("disconnecting", (reason) => {
-    console.log('disconnecting')
+    const username = socketUserData[socket.id]
+    console.log(`disconnecting ${username}`)
+    socketUserData[socket.id] = null
     for (const room of socket.rooms) {
       console.log(`room is ${room}`)
       if (room !== socket.id) {
-        socket.to(room).emit('message', formatMessage(botName,`User Has left the chat`));
+        socket.to(room).emit('message', formatMessage(botName, `${username} has left the chat`));
       }
     }
   });
