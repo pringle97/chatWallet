@@ -21,8 +21,13 @@ chat.addEventListener('submit', event => {
   event.preventDefault()
 
   //message text
-  const usermsg = Input.value
-  socket.emit('chatMessage', (usermsg, {username,room}))
+  let usermsg = { 
+    message: Input.value,
+    username,
+    room
+  }
+
+  socket.emit('chatMessage', (usermsg))
   console.log({username,room})
   
   //clear input

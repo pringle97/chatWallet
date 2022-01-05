@@ -89,13 +89,14 @@ io.on('connection', socket => {
 
 
   //listen for chat message
-  socket.on('chatMessage', (usermsg, {username, room}) => {
-    const currentUser = {username, rooom}
-    console.log(currentUser.username, currentUser.room)
+  socket.on('chatMessage', (usermsg) => {
+    // const currentUser = {username, room}
+    // console.log(currentUser.username, currentUser.room)
     console.log(usermsg)
     // console.log(currentUser)
-    io.emit('message', formatMessage(``, usermsg))
+    io.to(usermsg.room).emit('message', formatMessage(`${usermsg.username}`, usermsg.message))
   })
+  
   
   //user disconnects
   socket.on('disconnect', socket => {

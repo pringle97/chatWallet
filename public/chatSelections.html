@@ -77,6 +77,7 @@ HERE YOU CAN FIND A LIST OF AVAILABLE CHAT ROOMS
     document.getElementById('submit').addEventListener('click', event => {
       event.preventDefault()
       location = `chatRoom.html?username=${localStorage.getItem('username')}&room=${document.getElementById('room').value}`
+      localStorage.setItem('room', document.getElementById('room').value)
     })
 
     async function logOut() {
