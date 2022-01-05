@@ -78,10 +78,10 @@ io.on('connection', socket => {
   socket.on('joinRoom', ({ username, room }) => {
     const currentUser = { username, room }
     socketUserData[socket.id] = currentUser.username
-    if (userRoomsData[username] == null) {
-      userRoomsData[username] = {}
-    }
-    userRoomsData[username][room] = true
+    // if (userRoomsData[username] == null) {
+    //   userRoomsData[username] = {}
+    // }
+    // userRoomsData[username][room] = true
     socket.join(currentUser.room)
 
 
