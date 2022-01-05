@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 const { Sequelize } = require('sequelize')
 
 module.exports = new Sequelize(process.env.NODE_ENV === 'production' ? process.env.JAWSDB_URL : 'mysql://root:rootroot@localhost:3306/chatwallet_db')
+=======
+const { Sequelize } = require('sequelize')
+
+module.exports = new Sequelize(process.env.NODE_ENV === 'production' ? process.env.JAWSDB_URL : 'mysql://root:ElsaRoseyButterScotch@localhost:3306/chatwallet_db')
+>>>>>>> 188559557c9af10da0c08d868c67f59ef727a926
