@@ -58,7 +58,7 @@ passport.use(new JWTStrategy({
 }
   , async function ({ id }, cb) {
     try {
-      const user = await User.findOne({ where: { id }, include: [Post] } )
+      const user = await User.findOne({ where: { id }, include: [Post] })
       cb(null, user)
       socket.emit('username', user.User.username)
     } catch (err) {
@@ -71,13 +71,14 @@ app.use(require('./routes'))
 const botName = 'Chat Bot'
 //run on login or connect
 io.on('connection', socket => {
-  socket.on('joinRoom', ({username, room}) => {
-    const currentUser = {username, room}
-    console.log(currentUser)
+  socket.on('joinRoom', ({ username, room }) => {
+    const currentUser = { username, room }
+
     socket.join(currentUser.room)
-    
+ 
+
     //welcome current user
-    console.log('new connection')
+    console.log(`${currentUser.username} new connection ${socket.id}`)
     socket.emit('message', formatMessage(botName, 'Welcome to Chat Wallet!'))
 
     // broadcast when user Joins chat
@@ -85,7 +86,15 @@ io.on('connection', socket => {
 
 
   })
-
+  socket.on("disconnecting", (reason) => {
+    console.log('disconnecting')
+    for (const room of socket.rooms) {
+      console.log(`room is ${room}`)
+      if (room !== socket.id) {
+        socket.to(room).emit('message', formatMessage(botName,`User Has left the chat`));
+      }
+    }
+  });
 
 
   //listen for chat message
@@ -96,12 +105,14 @@ io.on('connection', socket => {
     // console.log(currentUser)
     io.to(usermsg.room).emit('message', formatMessage(`${usermsg.username}`, usermsg.message))
   })
-  
-  
-  //user disconnects
-  socket.on('disconnect', socket => {
-    io.emit('message', formatMessage(botName, ` Has left the chat`))
-  })
+
+
+  // //user disconnects
+  // socket.on('disconnect', socket => {
+  //   console.log(socket.id)
+  //   console.log('hello')
+  //   io.emit('message', formatMessage(botName, `User Has left the chat`))
+  // })
 })
 
 
