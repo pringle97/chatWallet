@@ -70,7 +70,7 @@ app.use(require('./routes'))
 // socket user data maps socket id with usernames in memory instead of using database
 const socketUserData = {}
 // username to an array of rooms
-const userRoomsData = {}
+// const userRoomsData = {}
 
 const botName = 'Chat Bot'
 //run on login or connect

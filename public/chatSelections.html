@@ -28,9 +28,9 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
           </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./profile.html">Profile</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./profile.html">Profile</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
           </li>
@@ -44,15 +44,15 @@
       </div>
     </div>
   </nav>
-HERE YOU CAN FIND A LIST OF AVAILABLE CHAT ROOMS
-<div id="chats" class="container">here is the placeholder container for the chatrooms
-  <div class="card" style="width: 18rem;">
-    <img src="../utils/chatwallet-01.png" class="card-img-top" alt="Chat Wallet Logo">
-    <div class="card-body">
-      <h5 class="card-title">Chat Rooms</h5>
-      <p class="card-text">LIST OF AVAILABLE CHAT ROOMS
-      </p>
-      <form>
+  HERE YOU CAN FIND A LIST OF AVAILABLE CHAT ROOMS
+  <div id="chats" class="container">here is the placeholder container for the chatrooms
+    <div class="card" style="width: 18rem;">
+      <img src="../utils/chatwallet-01.png" class="card-img-top" alt="Chat Wallet Logo">
+      <div class="card-body">
+        <h5 class="card-title">Chat Rooms</h5>
+        <p class="card-text">LIST OF AVAILABLE CHAT ROOMS
+        </p>
+        <form>
           <div class="form-control">
             <label for="room">Room</label>
             <select name="room" id="room">
@@ -67,34 +67,35 @@ HERE YOU CAN FIND A LIST OF AVAILABLE CHAT ROOMS
             </select>
           </div>
           <button type="submit" class="btn" id="submit">Join Chat</button>
-          </form>
-  </div>
-</div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-  <script>
-    document.getElementById('submit').addEventListener('click', event => {
-      event.preventDefault()
-      location = `chatRoom.html?username=${localStorage.getItem('username')}&room=${document.getElementById('room').value}`
-      localStorage.setItem('room', document.getElementById('room').value)
-    })
+        </form>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+    <script>
+      document.getElementById('submit').addEventListener('click', event => {
+        event.preventDefault()
+        location = `chatRoom.html?username=${localStorage.getItem('username')}&room=${document.getElementById('room').value}`
+        localStorage.setItem('room', document.getElementById('room').value)
+      })
 
-    async function logOut() {
-      localStorage.removeItem('username')
-      localStorage.removeItem('token')
-    
-      location = '/index.html'
-    }
+      async function logOut() {
+        localStorage.removeItem('username');
+        localStorage.removeItem('token');
 
-    document.getElementById('signout').addEventListener('click', event => {
-      event.preventDefault()
-      logOut()
-      alert('user logged out')
-    })
+      }
 
-    
-  </script>
+      document.getElementById('signout').addEventListener('click', event => {
+        event.preventDefault()
+        logOut().then(res => {
+          alert('user logged out');
+          location = '/index.html';
+        })
+      })
+
+
+    </script>
 </body>
 
 </html>
