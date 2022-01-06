@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #aboutUs {
     display: flex;
 }
@@ -31,38 +30,4 @@ h1 {
 html, body {
     background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-dark-blue-technology-background-with-digital-network-lines-and-illustration-of-picture-image_1238300.jpg');
     font-family: 'Numans', sans-serif;
-=======
-#aboutUs {
-    display: flex;
-}
-
-.cardSmall {
-    height: 370px;
-    /* margin-top: auto; */
-    margin-bottom: 50px;
-    margin: auto;
-    width: 400px;
-    background-color: white;
-  }
-
-#footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    color: black;
-    text-align: center;
-}
-
-h1 {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-html, body {
-    background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-dark-blue-technology-background-with-digital-network-lines-and-illustration-of-picture-image_1238300.jpg');
-    font-family: 'Numans', sans-serif;
->>>>>>> 188559557c9af10da0c08d868c67f59ef727a926
   }
