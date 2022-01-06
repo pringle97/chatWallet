@@ -87,7 +87,7 @@ io.on('connection', socket => {
 
     //welcome current user ${Object.keys(userRoomsData[username])}
     console.log(`${currentUser.username} new connection ${socket.id}`)
-    socket.emit('message', formatMessage(botName, 'Welcome to Chat Wallet!'))
+    socket.emit('message', formatMessage(botName, `Welcome to Chat Wallet's ${currentUser.room} Chat Room!`))
 
     // broadcast when user Joins chat
     socket.broadcast.to(currentUser.room).emit('message', formatMessage(botName, `${currentUser.username} Has joined the Chat`))
