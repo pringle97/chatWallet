@@ -2,14 +2,16 @@ const socket = io();
 const box = document.querySelector('.chatbox')
 const chat = document.querySelector('.chat-form')
 const Input = document.querySelector('.chat-input')
-
+const roomName = document.getElementById('roomName')
 
 // get username and room from URL
 const {username, room} = Qs.parse(location.search, {
   ignoreQueryPrefix: true
 })
-
-
+let userRoom = {
+  username,
+  room
+}
 //Join chatroom
 socket.emit('joinRoom', { username, room})
 
@@ -53,3 +55,4 @@ function outputMessage(message) {
       <p class="text">${message.text}</p>`;
       document.querySelector('.chatbox').appendChild(div)
 }
+

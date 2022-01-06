@@ -6,11 +6,16 @@ const User = pls.defineUser(sequelize, {
   username: {
     type: DataTypes.STRING,
     allowNull: false
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  dob: {
+    type: DataTypes.DATE,
+    allowNull: true
   }
-  // chatrooms: {
-  //   type: DataTypes.STRING,
-  //   allowNull: true
-  // }
+ 
 })
 
 module.exports = User

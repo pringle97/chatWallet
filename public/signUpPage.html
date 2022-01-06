@@ -36,6 +36,14 @@
               </div>
               <input type="password" class="form-control" placeholder="Password" id="rPassword">
             </div>
+            <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="e-mail" id="rEmail">
+            </div>
+            <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="yyyy-mm-dd" id="rDob">
+            </div>
             <div class="form-group">
               <input type="submit" id="register" value="Sign Up" class="btn float-right login_btn">
             </div>
@@ -57,14 +65,19 @@
     function registerUser() {
       let newUser = {
         username: document.getElementById('rUsername').value,
-        password: document.getElementById('rPassword').value
+        password: document.getElementById('rPassword').value,
+        email: document.getElementById('rEmail').value,
+        dob: document.getElementById('rDob').value
       }
+
       axios.post('/api/users/register', newUser)
         .then(res => {
           alert('Account Created')
           location = ('./loginPage.html')
-          document.getElementById('rUsername').value = ''
-          document.getElementById('rPassword').value = ''
+          document.getElementById('rUsername').value = '';
+          document.getElementById('rPassword').value = '';
+          document.getElementById('rEmail').value = '';
+          document.getElementById('rDob').value = '';
         })
     }
 
