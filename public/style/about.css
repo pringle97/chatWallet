@@ -3,13 +3,14 @@
 }
 
 .cardSmall {
-    height: 370px;
     /* margin-top: auto; */
     margin-bottom: 50px;
     margin: auto;
-    width: 400px;
     background-color: white;
-  }
+    background-size: cover;
+    width: fit-content;
+     block-size: fit-content
+}
 
 #footer {
     position: fixed;
@@ -30,4 +31,4 @@ h1 {
 html, body {
     background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-dark-blue-technology-background-with-digital-network-lines-and-illustration-of-picture-image_1238300.jpg');
     font-family: 'Numans', sans-serif;
-  }
+}

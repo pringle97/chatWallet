@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
-html, body {
+ body {
   background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-dark-blue-technology-background-with-digital-network-lines-and-illustration-of-picture-image_1238300.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   font-family: 'Numans', sans-serif;
+}
+nav {
+  margin-left: 0px;
 }
 
 .container {
@@ -19,6 +22,7 @@ html, body {
   margin-bottom: auto;
   width: 400px;
   background-color: rgba(0, 0, 0, 0.5) !important;
+  
 }
 
 
@@ -52,4 +56,7 @@ input:focus {
 
 .links a {
   margin-left: 4px;
+}
+h3 {
+  text-align:center;
 }

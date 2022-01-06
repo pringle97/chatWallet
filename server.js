@@ -58,34 +58,52 @@ passport.use(new JWTStrategy({
 }
   , async function ({ id }, cb) {
     try {
-      const user = await User.findOne({ where: { id }, include: [Post] } )
+      const user = await User.findOne({ where: { id }, include: [Post] })
       cb(null, user)
-      socket.emit('username', user.User.username)
     } catch (err) {
       cb(err, null)
     }
   }))
 
 app.use(require('./routes'))
+// socket user data maps socket id with usernames in memory instead of using database
+const socketUserData = {}
+// username to an array of rooms
+// const userRoomsData = {}
 
 const botName = 'Chat Bot'
 //run on login or connect
 io.on('connection', socket => {
-  socket.on('joinRoom', ({username, room}) => {
-    const currentUser = {username, room}
-    console.log(currentUser)
+  socket.on('joinRoom', ({ username, room }) => {
+    const currentUser = { username, room }
+    socketUserData[socket.id] = currentUser.username
+    // if (userRoomsData[username] == null) {
+    //   userRoomsData[username] = {}
+    // }
+    // userRoomsData[username][room] = true
     socket.join(currentUser.room)
-    
-    //welcome current user
-    console.log('new connection')
-    socket.emit('message', formatMessage(botName, 'Welcome to Chat Wallet!'))
+
+
+    //welcome current user ${Object.keys(userRoomsData[username])}
+    console.log(`${currentUser.username} new connection ${socket.id}`)
+    socket.emit('message', formatMessage(botName, `Welcome to Chat Wallet's ${currentUser.room} Chat Room!`))
 
     // broadcast when user Joins chat
     socket.broadcast.to(currentUser.room).emit('message', formatMessage(botName, `${currentUser.username} Has joined the Chat`))
 
 
   })
-
+  socket.on("disconnecting", (reason) => {
+    const username = socketUserData[socket.id]
+    console.log(`disconnecting ${username}`)
+    socketUserData[socket.id] = null
+    for (const room of socket.rooms) {
+      console.log(`room is ${room}`)
+      if (room !== socket.id) {
+        socket.to(room).emit('message', formatMessage(botName, `${username} has left the chat`));
+      }
+    }
+  });
 
 
   //listen for chat message
@@ -96,18 +114,15 @@ io.on('connection', socket => {
     // console.log(currentUser)
     io.to(usermsg.room).emit('message', formatMessage(`${usermsg.username}`, usermsg.message))
   })
-  
-  
-  //user disconnects
-  socket.on('disconnect', socket => {
-    io.emit('message', formatMessage(botName, ` Has left the chat`))
-  })
+
+
 })
 
-async function init() { await require('./db').sync() }
+async function init() {
+  await require('./db').sync()
 
-init()
+} 
+init() 
 
 const PORT = 3000 || process.env.PORT
 server.listen(PORT, () => console.log(`Server running on ${PORT}`))
-
