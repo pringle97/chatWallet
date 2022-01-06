@@ -1,3 +1,7 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +14,7 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="/style/stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="./style/stylesheet.css">
 
   <title>Sign Up</title>
 </head>
@@ -24,32 +28,36 @@
         </div>
         <div class="card-body">
           <form>
-            <div class="input-group form-group" style="padding-bottom: 10px;">
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at"></i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Email" id="rEmail">
+            </div>
+            <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
               <input type="text" class="form-control" placeholder="Username" id="rUsername">
             </div>
-            <div class="input-group form-group" style="padding-bottom: 5px;">
+            <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
               </div>
               <input type="password" class="form-control" placeholder="Password" id="rPassword">
             </div>
-            <span class="input-group-text"><i class="fas fa-key"></i></span>
-            </div>
-            <input type="text" class="form-control" placeholder="e-mail" id="rEmail">
-            </div>
-            <span class="input-group-text"><i class="fas fa-key"></i></span>
-            </div>
-            <input type="text" class="form-control" placeholder="yyyy-mm-dd" id="rDob">
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+              </div>
+              <input type="date" class="form-control" placeholder="Date of birth" id="rDob">
             </div>
             <div class="form-group">
-              <input type="submit" id="register" value="Sign Up" class="btn float-right login_btn">
+              <input type="submit" value="Sign Up" class="btn float-right login_btn" id="register" style="margin-right: 15px;">
             </div>
           </form>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" >
           <div class="d-flex justify-content-center links">
             Already have an account?<a href="./loginPage.html">Sign In</a>
           </div>
