@@ -20,6 +20,7 @@
     "passport.socketio": "^3.7.0",
     "sequelize": "^7.0.0-alpha.2",
     "socket.io": "^4.4.0",
+    "socketio": "^1.0.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
