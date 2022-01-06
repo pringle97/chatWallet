@@ -73,14 +73,19 @@
     function registerUser() {
       let newUser = {
         username: document.getElementById('rUsername').value,
-        password: document.getElementById('rPassword').value
+        password: document.getElementById('rPassword').value,
+        email: document.getElementById('rEmail').value,
+        dob: document.getElementById('rDob').value
       }
+
       axios.post('/api/users/register', newUser)
         .then(res => {
           alert('Account Created')
           location = ('./loginPage.html')
-          document.getElementById('rUsername').value = ''
-          document.getElementById('rPassword').value = ''
+          document.getElementById('rUsername').value = '';
+          document.getElementById('rPassword').value = '';
+          document.getElementById('rEmail').value = '';
+          document.getElementById('rDob').value = '';
         })
     }
 
