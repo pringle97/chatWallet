@@ -6,7 +6,7 @@ const { redirect } = require('express/lib/response')
 
 //user registration
 router.post('/users/register', (req, res) => {
-  User.register(new User({ username: req.body.username}), req.body.password, err => {
+  User.register(new User({ username: req.body.username, email: req.body.email, dob: req.body.dob}), req.body.password, err => {
     if (err) { console.log(err) }
     res.sendStatus(200)
     // res.redirect('./loginPage.html')
