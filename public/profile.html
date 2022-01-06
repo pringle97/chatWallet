@@ -34,9 +34,10 @@
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
         })
+        console.log(user)
         document.getElementById('username').innerText = `Hello ${user.username}! Welcome to your Profile!`
         document.getElementById('email').innerText = `Your E-mail: ${user.email}`
-        document.getElementById('dob').innerText = `Date of Birth: ${user.dob.split("T")[0]}`
+        document.getElementById('dob').innerText = `Date of Birth: ${user.dob.split('T')[0]}`
 
       } catch (err) {
         alert(err)
