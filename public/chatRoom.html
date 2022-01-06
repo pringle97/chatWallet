@@ -1,3 +1,7 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,35 +11,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8" />
   <title>Chat Wallet</title>
-  <link rel="stylesheet" type="text/css" href="../style/stylesheet.css" />
+  <link rel="stylesheet" type="text/css" href="./public/style/stylesheet.css" />
 </head>
 
 <body>
 
   <div id="container">
-    <div id="menu">
-      <h2 id="roomName" class="roomName">Chat Wallet Chat Room</h2>
-      <p class="welcome" id="welcome"></p>
-      <p class="leave"><a id="leave" href="/chatSelections.html">Exit Chat</a></p>
-    </div>
+    <div class="d-flex justify-content-center h-100">
+      <div id="menu">
+        <h2 id="roomName" class="roomName">Chat Wallet Chat Room</h2>
+        <p class="welcome" id="welcome"></p>
+        <p class="leave"><a id="leave" href="/chatSelections.html">Exit Chat</a></p>
+      </div>
 
-    <div id="chatbox" style="overflow:scroll; height:600px; width: 600px; border: 1px solid black;" class="chatbox">
-    </div>
+      <div id="chatbox" style="overflow:scroll; height:600px; width: 600px; border: 1px solid black;" class="chatbox">
+      </div>
 
-    <form name="message" class="chat-form">
-      <label for="chat" name="chat">Chat:</label>
-      <textarea name="usermsg" type="text" class="chat-input" id="usermsg" cols="30" rows="1"></textarea>
-      <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
-    </form>
+      <form name="message" class="chat-form">
+        <label for="chat" name="chat">Chat:</label>
+        <textarea name="usermsg" type="text" class="chat-input" id="usermsg" cols="30" rows="1"></textarea>
+        <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+      </form>
+    </div>
   </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.2/qs.min.js"
-  integrity="sha512-ErYZLDi4WRoox2JhOIADWBydTRhMJ0KIXnv5C1GvuY8YooLGapnebaM3iRGhwS6/E9ONXj0MRXp6bhu73sdFkg=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.2/qs.min.js"
+    integrity="sha512-ErYZLDi4WRoox2JhOIADWBydTRhMJ0KIXnv5C1GvuY8YooLGapnebaM3iRGhwS6/E9ONXj0MRXp6bhu73sdFkg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="socket.io/socket.io.js"></script>
-<script src="script.js"></script>
- <!-- <script type="text/javascript">
+  <script src="socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+  <!-- <script type="text/javascript">
     // jQuery Document
     $(document).ready(function () { });
   </script> -->
@@ -47,7 +53,7 @@
     }
 
     addUser()
-    
+
   </script>
 </body>
 
