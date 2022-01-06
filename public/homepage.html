@@ -30,43 +30,62 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="features.html">Features</a>
+                        <a class="nav-link" href="./profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
+                        <a class="nav-link" href="./about.html">About Us</a>
                     </li>
-                    <li class="nav-item" id="loginbtn">
-                        <a class="nav-link" href="loginPage.html">Log In</a>
-                    </li>
-                    <li class="nav-item" id="signupbtn">
-                        <a class="nav-link" href="signUpPage.html">Sign Up</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./chatSelections.html">Chatrooms</a>
                     </li>
                 </ul>
+                <a class="navbar-text" id="signout">
+                    Sign Out
+                </a>
             </div>
         </div>
     </nav>
-    
+
     <div class="jumbotron container" style="background-color: #BCD3F2;" id="centerpage">
         <h1 class="display-4" style="text-align: center;">Chat Wallet</h1>
         <p class="lead" style="text-align: center;">A chat room app that lets you keep in touch with your hobbies.</p>
         <hr class="my-4">
         <p>
-            Chat wallet gives users the opportunity to find like-minded individuals to discuss ideas and collaborate on projects, 
-        and or seek help with a current project. Chat rooms range from career based discussions to programming languages, hobbies and beyond.
-        Simply register an account via our login portal and you will be free to roam the chat rooms and find one that suits your needs or wants. Registration only requires a username, password, and an e-mail. 
-        E-mails will only be used to update users on the incoming changes for the application, no sales gimmicks or ad promotions, guaranteed!
+            Chat wallet gives users the opportunity to find like-minded individuals to discuss ideas and collaborate on
+            projects,
+            and or seek help with a current project. Chat rooms range from career based discussions to programming
+            languages, hobbies and beyond.
+            Simply register an account via our login portal and you will be free to roam the chat rooms and find one
+            that suits your needs or wants. Registration only requires a username, password, and an e-mail.
+            E-mails will only be used to update users on the incoming changes for the application, no sales gimmicks or
+            ad promotions, guaranteed!
         </p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Log In</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Sign Up</a>
     </div>
-    
+
     <footer id="footer">
         <p>Copyright. All Rights Reserved</p>
-        
+
     </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script>
+        async function logOut() {
+            localStorage.removeItem('username');
+            localStorage.removeItem('token');
+
+        }
+
+        document.getElementById('signout').addEventListener('click', event => {
+            event.preventDefault()
+            logOut().then(res => {
+                alert('user logged out');
+                location = '/index.html';
+            })
+        })
+    </script>
 </body>
 
 </html>

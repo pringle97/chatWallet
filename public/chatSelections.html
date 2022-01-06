@@ -14,9 +14,7 @@
   <link rel="stylesheet" type="text/css" href="./style/stylesheet.css">
   <link rel="stylesheet" type="text/css" href="./style/homepage.css">
   <style>
-    span {
-      text-align:center;
-    }
+ 
   </style>
 </head>
 
@@ -31,13 +29,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="./homepage.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./profile.html">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./about.html">About Us</a>
@@ -49,18 +44,14 @@
       </div>
     </div>
   </nav>
- <span>This page is dedicated to the current list of available chat rooms.</span>
  <br>
  <br>
   <div id="chats" class="container">
-    <div class="card" style="width: 18rem;">
-      <img src="../utils/chatwallet-01.png" class="card-img-top" alt="Chat Wallet Logo">
+    <div class="card" style="width: 18rem; height: 525px; margin-left: 500px">
       <div class="card-body">
-        <h5 class="card-title">Chat Rooms</h5>
-        <p class="card-text">LIST OF AVAILABLE CHAT ROOMS
-        </p>
+        <h5 class="card-title" style="background-color:whitesmoke">Chat Rooms</h5>
         <form>
-          <div class="form-control">
+          <div class="form-control card-text" style="height: 400px; justify-content: center">
             <label for="room">Room</label>
             <select name="room" id="room">
               <option value="Art">Art</option>
@@ -73,7 +64,8 @@
               <option value="Surfing">Surfing</option>
             </select>
           </div>
-          <button type="submit" class="btn" id="submit">Join Chat</button>
+          <br>
+          <button type="submit" class="btn btn-primary" id="submit">Join Chat</button>
         </form>
       </div>
     </div>

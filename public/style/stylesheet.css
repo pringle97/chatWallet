@@ -7,6 +7,9 @@
   height: 100%;
   font-family: 'Numans', sans-serif;
 }
+nav {
+  margin-left: 0px;
+}
 
 .container {
   height: 100%;
@@ -54,6 +57,6 @@ input:focus {
 .links a {
   margin-left: 4px;
 }
-h1 {
+h3 {
   text-align:center;
 }
