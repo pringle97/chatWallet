@@ -51,8 +51,8 @@ socket.on('message', message => {
 function outputMessage(message) {
   const div = document.createElement('div')
   div.classList.add('message');
-  div.innerHTML =`<div style="background-color:darkblue; color:whitesmoke; border: 2px solid black;"><p class="meta" >${message.username} @ ${message.time}</p>
-      <p class="text">${message.text}</p></div><br>`;
+  div.innerHTML =`<p class="meta" style="background-color:darkblue; color:whitesmoke;>${message.username} @ ${message.time}</p>
+      <p class="text" style="background-color:darkblue; color:whitesmoke;>${message.text}</p><br>`;
       document.querySelector('.chatbox').appendChild(div)
 }
 
