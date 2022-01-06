@@ -117,15 +117,12 @@ io.on('connection', socket => {
   })
 
 
-  // //user disconnects
-  // socket.on('disconnect', socket => {
-  //   console.log(socket.id)
-  //   console.log('hello')
-  //   io.emit('message', formatMessage(botName, `User Has left the chat`))
-  // })
 })
 
+async function init() {
+  await require('./db').sync()
 
+} 
 
 const PORT = 3000 || process.env.PORT
 server.listen(PORT, () => console.log(`Server running on ${PORT}`))
