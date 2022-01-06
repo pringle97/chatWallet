@@ -1,4 +1,3 @@
-import io from 'socket.io-client';
 const socket = io();
 const box = document.querySelector('.chatbox')
 const chat = document.querySelector('.chat-form')
