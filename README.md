@@ -16,6 +16,8 @@ We have created an app that will allow the user to pick a certain topic to chat 
 - socket.io
 - express.js
 - passport.js
+- mySQL and Sequelize
+- axios
 
 # Team
 - Claude Mokbel [Github](https://github.com/cmokbel1)
