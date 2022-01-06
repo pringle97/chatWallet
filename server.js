@@ -60,7 +60,6 @@ passport.use(new JWTStrategy({
     try {
       const user = await User.findOne({ where: { id }, include: [Post] })
       cb(null, user)
-      socket.emit('username', user.User.username)
     } catch (err) {
       cb(err, null)
     }
