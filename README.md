@@ -1,6 +1,7 @@
 # Chat-Wallet
 
 Chat Wallet is an web based app that allows users to chat with other individuals about each other's hobbies and interests.
+https://chat-wallet.herokuapp.com/
 
 # Motivation
 
