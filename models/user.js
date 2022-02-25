@@ -15,7 +15,6 @@ const User = pls.defineUser(sequelize, {
     type: DataTypes.DATE,
     allowNull: true
   }
- 
 })
 
 module.exports = User
