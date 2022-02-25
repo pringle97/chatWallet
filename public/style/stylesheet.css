@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
- body {
-  background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-dark-blue-technology-background-with-digital-network-lines-and-illustration-of-picture-image_1238300.jpg');
+body {
+  /* background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-dark-blue-technology-background-with-digital-network-lines-and-illustration-of-picture-image_1238300.jpg'); */
+  background-color: rgb(19, 14, 68);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;

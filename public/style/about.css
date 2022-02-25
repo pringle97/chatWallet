@@ -1,3 +1,9 @@
+* {
+    /* background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-dark-blue-technology-background-with-digital-network-lines-and-illustration-of-picture-image_1238300.jpg'); */
+    font-family: 'Numans', sans-serif;
+}
+
+
 #aboutUs {
     display: flex;
 }
@@ -9,7 +15,7 @@
     background-color: white;
     background-size: cover;
     width: fit-content;
-     block-size: fit-content
+    block-size: fit-content
 }
 
 #footer {
@@ -17,8 +23,8 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: white;
-    color: black;
+    background-color: rgb(16, 8, 93);
+    color: white;
     text-align: center;
 }
 
@@ -26,9 +32,4 @@ h1 {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
-}
-
-html, body {
-    background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-dark-blue-technology-background-with-digital-network-lines-and-illustration-of-picture-image_1238300.jpg');
-    font-family: 'Numans', sans-serif;
 }
